@@ -393,14 +393,14 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
   <div class="ovl" id="ov1">
     <div class="eyebrow">// Scene 01 — Opening</div>
     <h1>شيف باتيسري<br><span class="stroke">طنجة.</span></h1>
-    <p>من كعب الغزال باللوز إلى كعكات الأعراس المصمّمة على ذوقك — حلويات تُتقن في طنجة وتُحضّر على الطلب، وتوصلك حتى لباب الدار.</p>
+    <p>من كيك الديزاين وكعكات الأعراس المصمّمة على ذوقك إلى أكواب السعادة — تخصصات تُتقن في طنجة وتُحضّر على الطلب، وتوصلك حتى لباب الدار.</p>
     <div class="meta"><span class="micro">@CHEF.PATISSERIE.TANGER</span><span class="micro">KAAB GHZAL · 280 DH/KG</span><span class="micro">TANGER — MAROC</span></div>
   </div>
 
   <div class="ovl" id="ov2" style="opacity:0">
     <div class="eyebrow">// Scene 02 — Layers</div>
     <h2>كل قطعة في<br>عمقٍ مختلف.</h2>
-    <p>واجهة المحل، صينية التراث، وبطاقات التشكيلة — كيتحركو بسرعات مختلفة حيت العمق حقيقي، ماشي وهمي.</p>
+    <p>كيك الديزاين، الفيرين، وبطاقات التخصصات — كيتحركو بسرعات مختلفة حيت العمق حقيقي، ماشي وهمي.</p>
     <div class="ticks">
       <span class="micro">LAYER A · SCREEN — Z 0.0</span>
       <span class="micro">LAYER B · HERITAGE — Z +0.8</span>
@@ -416,7 +416,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
   <div class="ovl" id="ov4" style="opacity:0">
     <div class="eyebrow">// Scene 04 — The Collection</div>
     <h2>التشكيلة كاملة،<br>قدام عينيك.</h2>
-    <p>بطاقات كتطفو في العمق — التراث المغربي، العصري الفرنسي وكعكات الأعراس. البطاقة اللي في الوسط هي النجمة.</p>
+    <p>بطاقات كتطفو في العمق — كيك الديزاين، الكيك الإيطالي وكعكات الأعراس. البطاقة اللي في الوسط هي النجمة.</p>
   </div>
 
   <div class="ovl" id="ov5" style="opacity:0">
@@ -709,10 +709,10 @@ const SCENES = [
 const LAYER_SRC = {
   screen:     { make:'screen', src:'img/hero.webp', url:'chef.patisserie.tanger',  w:6.6 },
   box:        { make:'photo',  src:'img/g2.webp',   w:5.4 },
-  cardDouble: { make:'card',   src:'img/g1.webp',   label:'كعب غزال باللوز — 280 درهم', w:3.5 },
-  cardClassic:{ make:'card',   src:'img/g3.webp',   label:'طارطة الفواكه — 190 درهم',      w:3.5 },
-  cardExp:    { make:'card',   src:'img/dark.webp', label:'تشكيلة تقليدية — 160 درهم',    w:3.5 },
-  cardShop:   { make:'card',   src:'img/hero.webp', label:'علبة هدايا الشيف — من 250 درهم', w:3.5 }
+  cardDouble: { make:'card',   src:'img/g1.webp',   label:'كيك العزوبية Bride Squad — 350 درهم', w:3.5 },
+  cardClassic:{ make:'card',   src:'img/g3.webp',   label:'كيك بالصورة الشخصية — 280 درهم',      w:3.5 },
+  cardExp:    { make:'card',   src:'img/dark.webp', label:'فيرين مشكّلة ×12 — 200 درهم',    w:3.5 },
+  cardShop:   { make:'card',   src:'img/hero.webp', label:'كيكة عرس — من 1,600 درهم', w:3.5 }
 };
 window.STAGE = { layers:{}, cam:{...SCENES[0].cam}, ready:false };
 Object.keys(SCENES[0].layers).forEach(k => { window.STAGE.layers[k] = {...SCENES[0].layers[k]}; });
@@ -823,7 +823,7 @@ const PRODUCTS = [
  {id:14, cat:'vien', name:'كرواسون بالزبدة', fr:'Croissant au beurre', desc:'مورّق طبقة فوق طبقة، ذهبي ومقرمش — يخرج من الفرن كل صباح.', price:12, unit:'قطعة', img:'img/p-croissant.webp'},
  {id:15, cat:'vien', name:'بان أو شوكولا', fr:'Pain au chocolat', desc:'عجينة مورّقة وأصابع شوكولاتة سوداء — فطور الفرنسيين على أصوله.', price:14, unit:'قطعة', img:'img/hero.webp', pos:'8% 68%'},
  {id:16, cat:'vien', name:'بريوش العائلة', fr:'Brioche familiale', desc:'بريوش طري بالزبدة وماء الزهر — للفطور والعصريات العائلية.', price:35, unit:'قطعة كبيرة', img:'img/p-vitrine.webp'},
- {id:17, cat:'event', name:'كعكة عيد ميلاد كلاسيك', fr:'Layer cake anniversaire', desc:'6 إلى 8 أشخاص، نكهة من اختيارك وكتابة الاسم — ابتداءً من هاد الثمن حسب التصميم.', price:250, unit:'ابتداءً من', img:'img/p-wedding-detail.webp'},
+ {id:17, cat:'event', name:'كعكة عيد ميلاد كلاسيك', fr:'Layer cake anniversaire', desc:'6 إلى 8 أشخاص، نكهة من اختيارك وكتابة الاسم — ابتداءً من هاد الثمن حسب التصميم.', price:250, unit:'ابتداءً من', img:'img/r-goldcake.webp'},
  {id:18, cat:'event', name:'Number / Letter Cake', fr:'Number cake', desc:'رقم أو حرف مزيّن بالفواكه والماكارون والورود — نجم إنستغرام.', price:300, unit:'ابتداءً من', img:'img/render-number-cake.webp', pos:'center 30%'},
  {id:19, cat:'event', name:'كعكة عرس — طابقين', fr:'Wedding cake 2 étages', desc:'حتى 50 ضيفاً، تصميم مخصّص وتوصيل وتركيب في القاعة — التفاصيل في واتساب.', price:1600, unit:'ابتداءً من', img:'img/g2.webp', badge:'على الطلب 👰'},
  {id:20, cat:'box', name:'علبة الاكتشاف', fr:'Coffret découverte', desc:'مختارات من المغربي والعصري في علبة أنيقة — أول خطوة لاكتشاف الشيف.', price:150, unit:'علبة', img:'img/p-the.webp'},
