@@ -269,6 +269,84 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 </style>
+<style>
+/* ===== 3D additions — hero 2.5D / product journey / wedding parallax (2026-10-15) ===== */
+/* hero 2.5D stage */
+.hero{overflow-x:clip}
+.hero-stage{position:relative;perspective:1100px}
+.hero-stage::before{content:'';position:absolute;inset:-6% -4%;background:radial-gradient(closest-side,rgba(240,212,138,.30),rgba(201,162,75,.10) 55%,transparent 76%);filter:blur(6px);z-index:0;pointer-events:none}
+.hero-tilt{position:relative;z-index:1;perspective:1100px;transform-style:preserve-3d;will-change:transform}
+.hero-photo{animation:heroSway 9s ease-in-out infinite;will-change:transform}
+@keyframes heroSway{0%,100%{transform:rotateY(-6deg)}50%{transform:rotateY(6deg)}}
+.hero-shadow{position:absolute;left:50%;bottom:-17px;width:72%;height:26px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(0,0,0,.55),transparent 72%);border-radius:50%;z-index:0;pointer-events:none}
+/* card «شوف 3D» ghost button */
+.btn3d{display:block;width:100%;margin-top:8px;background:transparent;color:var(--cara-dark);border:1.5px solid var(--gold);border-radius:12px;padding:10px 6px;font-family:inherit;font-weight:800;font-size:.9rem;white-space:nowrap;cursor:pointer;transition:.2s;min-height:44px}
+.btn3d:hover{background:var(--gold-soft);border-color:var(--cara)}
+/* ===== journey ===== */
+.journey{background:linear-gradient(180deg,#17100a,#0a0705);color:#f5e6cf}
+.journey .sec-title{color:#fff}
+.journey .sec-sub{color:#d8c6a5}
+.j-chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:-14px 0 30px}
+.j-chip{background:rgba(255,255,255,.06);border:1px solid var(--line-d);color:#f0d48a;font-family:inherit;font-weight:800;font-size:.9rem;border-radius:50px;padding:9px 18px;cursor:pointer;transition:.2s;min-height:44px}
+.j-chip:hover{background:rgba(240,212,138,.14);border-color:var(--gold)}
+.j-wrap{position:relative;height:calc(27*90vh);height:calc(27*90svh)}
+.j-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#120b06}
+#jCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.j-prog{position:absolute;top:116px;inset-inline-start:16px;z-index:5;display:flex;flex-direction:column;gap:6px}
+.j-count{font-weight:900;color:#f0d48a;font-size:.98rem;text-shadow:0 2px 8px rgba(0,0,0,.8)}
+.j-bar{width:112px;height:4px;background:rgba(240,212,138,.25);border-radius:4px;overflow:hidden}
+.j-bar i{display:block;height:100%;width:0;background:var(--gold-2)}
+.j-skip{position:absolute;top:110px;inset-inline-end:14px;z-index:6;background:rgba(23,17,11,.82);color:#f0d48a;border:1px solid var(--line-d);border-radius:50px;padding:9px 17px;font-family:inherit;font-weight:800;font-size:.9rem;cursor:pointer;backdrop-filter:blur(4px);min-height:44px}
+.j-tocat{position:absolute;top:162px;inset-inline-end:14px;z-index:6;color:#f0d48a;font-weight:800;font-size:.88rem;text-decoration:none;background:rgba(23,17,11,.82);border:1px solid var(--line-d);border-radius:50px;padding:8px 15px;backdrop-filter:blur(4px)}
+.j-ov{position:absolute;inset-inline-start:22px;bottom:84px;z-index:4;max-width:352px;width:calc(100% - 44px);background:rgba(16,10,5,.80);border:1px solid var(--line-d);border-radius:18px;padding:18px 20px;backdrop-filter:blur(8px);opacity:0;transform:translateY(16px);pointer-events:none;visibility:hidden;transition:opacity .35s ease,transform .35s ease,visibility 0s .35s;color:#f5e6cf;box-shadow:0 18px 44px rgba(0,0,0,.45)}
+.j-ov.on{opacity:1;transform:none;pointer-events:auto;visibility:visible;transition:opacity .35s ease,transform .35s ease}
+.j-badge{display:inline-block;background:var(--cara);color:#fff;font-size:.72rem;font-weight:800;border-radius:50px;padding:3px 11px;margin-bottom:7px}
+.j-tag{float:left;background:transparent;color:var(--gold-2);border:1px solid rgba(240,212,138,.5);font-size:.68rem;font-weight:800;border-radius:50px;padding:2px 9px}
+.j-cat{color:var(--gold-2);font-weight:800;font-size:.76rem;letter-spacing:.4px}
+.j-ov h3{font-size:1.14rem;font-weight:900;line-height:1.5;margin:2px 0 4px;color:#fff}
+.j-desc{color:#d9c8ab;font-size:.9rem;line-height:1.65;margin-bottom:11px}
+.j-price{display:flex;align-items:baseline;gap:7px;margin-bottom:13px}
+.j-price b{font-size:1.28rem;font-weight:900;color:var(--gold-2)}
+.j-price span{color:#c9b18c;font-size:.85rem;font-weight:700}
+.j-btns{display:flex;gap:8px;flex-wrap:wrap}
+.j-add{flex:1 1 auto;background:var(--cara);color:#fff;border:none;border-radius:12px;padding:12px 10px;font-family:inherit;font-weight:800;font-size:.92rem;white-space:nowrap;cursor:pointer;transition:.2s;min-height:48px}
+.j-add:hover{background:var(--cara-dark)}
+.j-wa{flex:1 1 auto;background:var(--green);color:#fff;border:none;border-radius:12px;padding:12px 10px;font-family:inherit;font-weight:800;font-size:.92rem;white-space:nowrap;cursor:pointer;transition:.2s;min-height:48px}
+.j-wa:hover{background:var(--green-d)}
+/* journey fallback (static grid) */
+.j-fb .j-wrap{display:none}
+.j-fb #jFallback{padding-top:6px}
+#jFallback .prod-grid{margin-bottom:8px}
+/* ===== wedding layered parallax ===== */
+.wed-stage{position:relative;aspect-ratio:4/5;overflow:visible;box-shadow:none;background:transparent}
+.wed-frame{position:absolute;border-radius:22px;overflow:hidden}
+.wed-frame img{width:100%;height:100%;object-fit:cover;aspect-ratio:auto}
+.wed-back{top:-12px;bottom:-12px;left:-10px;right:-10px;z-index:0;filter:brightness(.45) blur(2px)}
+.wed-mid{top:14px;bottom:-8px;left:20px;right:-8px;z-index:1;filter:brightness(.78);border:1px solid var(--gold)}
+.wed-front{inset:0;z-index:2;box-shadow:var(--shadow)}
+.wed-chip{position:absolute;z-index:3;background:rgba(23,17,11,.87);color:#f0d48a;border:1px solid var(--gold);border-radius:50px;padding:6px 15px;font-weight:800;font-size:.86rem;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.wed-chip.c1{top:16px;inset-inline-start:14px}
+.wed-chip.c2{top:56px;inset-inline-end:14px}
+.wed-chip.c3{bottom:18px;inset-inline-start:14px}
+@media(max-width:820px){
+  .wed-stage{aspect-ratio:16/10}
+  .wed-back{top:-8px;bottom:-8px;left:-6px;right:-6px}
+  .wed-mid{top:9px;bottom:-5px;left:12px;right:-5px}
+}
+@media(max-width:767px){
+  .j-wrap{height:calc(27*80vh);height:calc(27*80svh)}
+  .j-prog{top:106px}
+  .j-skip{top:100px}
+  .j-tocat{top:150px}
+  .j-ov{inset-inline:14px;bottom:96px;width:auto;max-width:none;padding:14px 16px}
+  .j-ov h3{font-size:1.04rem}
+  .j-desc{font-size:.86rem;margin-bottom:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-photo{animation:none}
+}
+</style>
+
 </head>
 <body>
 
@@ -280,6 +358,7 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
   <nav class="main-nav" aria-label="التنقل الرئيسي">
     <a href="#home">الرئيسية</a>
     <a href="#best">الأكثر طلباً</a>
+    <a href="#journey">التجربة 3D</a>
     <a href="#catalogue">الكتالوج</a>
     
     <a href="#weddings">الأعراس</a>
@@ -298,6 +377,7 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
       <div class="hero-cta">
         <a class="btn btn-gold" href="#catalogue">🍰 شوف الكتالوج</a>
         <a class="btn btn-wa" href="https://wa.me/212647381609?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A8%D8%BA%D9%8A%D8%AA%20%D9%86%D8%B7%D9%84%D8%A8" target="_blank" rel="noopener">💬 اطلب عبر واتساب</a>
+        <a class="btn btn-ghost" href="#journey">🎬 جرّب العرض 3D</a>
       </div>
       <ul class="hero-trust">
         <li>🚚 توصيل داخل طنجة</li>
@@ -305,7 +385,7 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
         <li>🎂 كيك على الطلب قبل 48 ساعة</li>
       </ul>
     </div>
-    <div class="hero-photo"><img src="img/hero.webp" alt="تشيز كيك سان سيباستيان — شيف باتيسري طنجة" width="1000" height="1000" fetchpriority="high"></div>
+    <div class="hero-stage" id="heroStage"><div class="hero-tilt" id="heroTilt"><div class="hero-photo"><img src="img/hero.webp" alt="تشيز كيك سان سيباستيان — شيف باتيسري طنجة" width="1000" height="1000" fetchpriority="high"></div></div><div class="hero-shadow" id="heroShadow"></div></div>
   </div>
 </section>
 
@@ -318,6 +398,33 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
     <span><i>✦</i> طلب سريع عبر واتساب</span>
   </div>
 </div>
+
+<!-- 3D JOURNEY -->
+<section class="section journey" id="journey">
+  <div class="container">
+    <p class="sec-kicker">✦ تجربة تفاعلية ✦</p>
+    <h2 class="sec-title">تجربة المنتجات 3D</h2>
+    <p class="sec-sub">مرّري وشوفي كل منتج يدور قدامك — بنفس الصور الحقيقية ديال المنتجات<br><small>عرض بصري تفاعلي</small></p>
+    <div class="j-chips" id="jChips">
+      <button class="j-chip" type="button" data-jump="30">⭐ الأكثر طلباً</button>
+      <button class="j-chip" type="button" data-jump="45">🎂 المناسبات</button>
+      <button class="j-chip" type="button" data-jump="32">🍰 العصرية</button>
+      <button class="j-chip" type="button" data-jump="1">🇲🇦 المغربية</button>
+      <button class="j-chip" type="button" data-jump="41">🎉 الحفلات</button>
+      <button class="j-chip" type="button" data-jump="19">👰 الأعراس</button>
+    </div>
+  </div>
+  <div class="j-wrap" id="jWrap">
+    <div class="j-stage" id="jStage">
+      <canvas id="jCanvas"></canvas>
+      <div class="j-prog"><span class="j-count" id="jCount">1 / 27</span><div class="j-bar"><i id="jBarFill"></i></div></div>
+      <button class="j-skip" id="jSkip" type="button">تخطي التجربة ⏭</button>
+      <a class="j-tocat" href="#catalogue">الكتالوج الكامل ←</a>
+      <div class="j-overlays" id="jOverlays"></div>
+    </div>
+  </div>
+  <div class="container"><div id="jFallback" hidden></div></div>
+</section>
 
 <!-- BEST SELLERS -->
 <section class="section" id="best" style="padding-bottom:30px">
@@ -377,7 +484,7 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
 <!-- WEDDINGS -->
 <section class="section wedding" id="weddings">
   <div class="container wed-grid">
-    <div class="wed-img" data-rv><img src="img/wedding-roses.webp" alt="كعكة عرس بيضاء وذهبية متعددة الطوابق من شيف باتيسري طنجة" width="800" height="1000" loading="lazy" decoding="async"></div>
+    <div class="wed-img wed-stage" data-rv><div class="wed-frame wed-back" aria-hidden="true"><img src="img/wedding-roses.webp" alt="" loading="lazy" decoding="async"></div><div class="wed-frame wed-mid" aria-hidden="true"><img src="img/wedding-roses.webp" alt="" loading="lazy" decoding="async"></div><div class="wed-frame wed-front"><img src="img/wedding-roses.webp" alt="كعكة عرس بيضاء وذهبية متعددة الطوابق من شيف باتيسري طنجة" width="800" height="1000" loading="lazy" decoding="async"></div><span class="wed-chip c1">طابقين</span><span class="wed-chip c2">3 طوابق</span><span class="wed-chip c3">5 طوابق</span></div>
     <div class="wed-txt">
       <p class="sec-kicker">✦ الأعراس والمناسبات الكبيرة ✦</p>
       <h2>كعكات أعراس… لا تُنسى</h2>
@@ -599,6 +706,7 @@ function cardHTML(p, badgeOverride){
         <p class="p-desc" title="${p.desc}">${p.desc}</p>
         <div class="p-price"><span class="amount">${dh(p.price)}</span><span class="unit">/ ${p.unit}</span></div>
         <button class="${btnClass(p)}" onclick="addToCart(${p.id})" aria-label="${btnLabel(p)}: ${p.name}">${btnLabel(p)}</button>
+        <button class="btn3d" onclick="goScene(${p.id})" aria-label="شوف ${p.name} في العرض 3D">🎬 شوف 3D</button>
       </div>
     </article>`;
 }
@@ -741,5 +849,327 @@ if (!reduced && 'IntersectionObserver' in window){
 }
 renderBest(); render(); syncCart();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* ===== 3D additions: hero tilt, wedding parallax, product journey ===== */
+(function(){
+  'use strict';
+  var section = document.getElementById('journey');
+  if (!section || typeof GROUPS === 'undefined' || typeof byId === 'undefined') return;
+  var reducedM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* scenes: catalog GROUPS flat order, derived from the live PRODUCTS data */
+  var SCENE_IDS = [];
+  GROUPS.forEach(function(g){ g.ids.forEach(function(id){ if (byId(id) && SCENE_IDS.indexOf(id) < 0) SCENE_IDS.push(id); }); });
+  ALL.forEach(function(p){ if (SCENE_IDS.indexOf(p.id) < 0) SCENE_IDS.push(p.id); });
+  var N = SCENE_IDS.length;
+  window.__sceneOf = {};
+  SCENE_IDS.forEach(function(id, i){ window.__sceneOf[id] = i; });
+  var FB = false;
+
+  window.goScene = function(id){
+    var idx = window.__sceneOf[id];
+    if (idx == null) return;
+    if (FB){
+      var el = document.getElementById('jfb-' + id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    var wrap = document.getElementById('jWrap');
+    var top = wrap.getBoundingClientRect().top + window.scrollY;
+    var sceneH = wrap.offsetHeight / N;
+    window.scrollTo({ top: top + idx * sceneH + 2, behavior: 'smooth' });
+  };
+  document.querySelectorAll('[data-jump]').forEach(function(b){
+    b.addEventListener('click', function(){ window.goScene(+b.dataset.jump); });
+  });
+  var skipBtn = document.getElementById('jSkip');
+  if (skipBtn) skipBtn.addEventListener('click', function(){
+    document.getElementById('best').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  /* ---------- hero 2.5D tilt (desktop pointer, lerped) ---------- */
+  (function(){
+    var st = document.getElementById('heroStage'), tl = document.getElementById('heroTilt'), sh = document.getElementById('heroShadow');
+    if (!st || !tl || reducedM || !window.matchMedia('(pointer: fine)').matches) return;
+    var tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+    function loop(){
+      cx += (tx - cx) * .06; cy += (ty - cy) * .06;
+      tl.style.transform = 'rotateY(' + cy.toFixed(2) + 'deg) rotateX(' + cx.toFixed(2) + 'deg)';
+      if (sh) sh.style.transform = 'translateX(-50%) scale(' + (1 + Math.abs(cy) * .014).toFixed(3) + ')';
+      if (Math.abs(tx - cx) > .01 || Math.abs(ty - cy) > .01) raf = requestAnimationFrame(loop); else raf = null;
+    }
+    st.addEventListener('mousemove', function(e){
+      var r = st.getBoundingClientRect();
+      ty = ((e.clientX - r.left) / r.width - .5) * 14;   /* max ±7° */
+      tx = -((e.clientY - r.top) / r.height - .5) * 10;
+      if (!raf) raf = requestAnimationFrame(loop);
+    });
+    st.addEventListener('mouseleave', function(){ tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(loop); });
+  })();
+
+  /* ---------- wedding layered parallax ---------- */
+  if (window.gsap && window.ScrollTrigger && !reducedM){
+    gsap.registerPlugin(ScrollTrigger);
+    var wtrig = { trigger: '#weddings', start: 'top bottom', end: 'bottom top', scrub: true };
+    gsap.to('.wed-back',  { y: 30,  ease: 'none', scrollTrigger: wtrig });
+    gsap.to('.wed-mid',   { y: -16, ease: 'none', scrollTrigger: wtrig });
+    gsap.to('.wed-front', { y: -30, ease: 'none', scrollTrigger: wtrig });
+    gsap.from('.wed-chip', { opacity: 0, y: 18, stagger: .28, duration: .6, ease: 'power2.out',
+      scrollTrigger: { trigger: '#weddings', start: 'top 55%' } });
+  }
+
+  /* ---------- fallback: static grid of all products ---------- */
+  function buildFallback(){
+    FB = true;
+    section.classList.add('j-fb');
+    var fb = document.getElementById('jFallback');
+    fb.hidden = false;
+    fb.innerHTML = '<div class="prod-grid">' + SCENE_IDS.map(function(id){ return cardHTML(byId(id)); }).join('') + '</div>';
+    var arts = fb.querySelectorAll('.product');
+    SCENE_IDS.forEach(function(id, i){ if (arts[i]) arts[i].id = 'jfb-' + id; });
+    var cnt = document.getElementById('jCount'); if (cnt) cnt.textContent = N + ' / ' + N;
+  }
+
+  var no3d = /[?&]no3d\b/.test(location.search);
+  var hasLibs = !!(window.THREE && window.gsap && window.ScrollTrigger);
+  var glOK = false;
+  if (!reducedM && !no3d && hasLibs){
+    try {
+      var tc = document.createElement('canvas');
+      glOK = !!(window.WebGLRenderingContext && (tc.getContext('webgl') || tc.getContext('experimental-webgl')));
+    } catch(e){ glOK = false; }
+  }
+  if (!glOK || !N){ buildFallback(); return; }
+
+  /* ---------- Three.js journey ---------- */
+  gsap.registerPlugin(ScrollTrigger);
+  var wrap = document.getElementById('jWrap');
+  var stage = document.getElementById('jStage');
+  var canvas = document.getElementById('jCanvas');
+  var countEl = document.getElementById('jCount');
+  var barEl = document.getElementById('jBarFill');
+
+  var isMobile = window.innerWidth < 768;
+  var rawDpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 1.75);
+  var dprLevels = [rawDpr, 1.25, 1].filter(function(v, i, a){ return v <= rawDpr && a.indexOf(v) === i; });
+  var dprIdx = 0;
+  var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+  renderer.setPixelRatio(dprLevels[0]);
+  var scene3 = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(42, 1, .1, 100);
+  camera.position.set(0, 0, 8.2);
+
+  /* ambience gradients */
+  var AMB = { 'default': ['#241708', '#120b06'],
+    30: ['#2b1a0c', '#140c05'], 31: ['#2e1c0d', '#150d06'],
+    34: ['#1f120a', '#0d0603'], 9:  ['#1f120a', '#0d0603'], 13: ['#1f120a', '#0d0603'],
+    32: ['#12291a', '#08130c'], 12: ['#12291a', '#08130c'],
+    23: ['#2c1216', '#140709'],
+    44: ['#2a1016', '#12060a'], 51: ['#2a1016', '#12060a'],
+    45: ['#2c1620', '#130810'], 46: ['#241533', '#0f0819'],
+    42: ['#10303a', '#071418'],
+    18: ['#2a2008', '#120e04'], 47: ['#2a2008', '#120e04'],
+    19: ['#33302a', '#171410'],
+    1:  ['#123324', '#081a10'], 3:  ['#123324', '#081a10'],
+    6:  ['#2e2010', '#140e06'], 40: ['#2c1a20', '#130a0e'],
+    41: ['#2b1820', '#120810'], 49: ['#241206', '#100802'],
+    50: ['#2c1c10', '#130c06'], 11: ['#251426', '#110813'],
+    8:  ['#2b1c0e', '#130c05'], 10: ['#2a2110', '#12100a'],
+    43: ['#2b1a14', '#130c09'] };
+  var ambCache = {};
+  function amb(id){
+    if (!ambCache[id]){ var a = AMB[id] || AMB['default']; ambCache[id] = [new THREE.Color(a[0]), new THREE.Color(a[1])]; }
+    return ambCache[id];
+  }
+  var bgU = { top: { value: new THREE.Color(AMB['default'][0]) }, bot: { value: new THREE.Color(AMB['default'][1]) } };
+  var bg = new THREE.Mesh(new THREE.PlaneGeometry(48, 26), new THREE.ShaderMaterial({
+    uniforms: bgU, depthWrite: false,
+    vertexShader: 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+    fragmentShader: 'uniform vec3 top; uniform vec3 bot; varying vec2 vUv; void main(){ gl_FragColor = vec4(mix(bot, top, pow(vUv.y, 1.15)), 1.0); }'
+  }));
+  bg.position.z = -8; scene3.add(bg);
+
+  function radialTexture(rgbaIn, rgbaOut){
+    var c = document.createElement('canvas'); c.width = c.height = 256;
+    var x = c.getContext('2d');
+    var g = x.createRadialGradient(128, 128, 8, 128, 128, 128);
+    g.addColorStop(0, rgbaIn); g.addColorStop(1, rgbaOut);
+    x.fillStyle = g; x.fillRect(0, 0, 256, 256);
+    return new THREE.CanvasTexture(c);
+  }
+  var glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: radialTexture('rgba(255,225,160,1)', 'rgba(255,225,160,0)'), color: 0xc9a24b, transparent: true, opacity: .45, depthWrite: false }));
+  glow.scale.set(10.5, 7.2, 1); glow.position.set(0, .15, -2.4); scene3.add(glow);
+
+  var group = new THREE.Group(); scene3.add(group);
+  var shadow = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: radialTexture('rgba(0,0,0,.85)', 'rgba(0,0,0,0)'), transparent: true, opacity: 0, depthWrite: false }));
+  shadow.position.set(0, -2.02, -.55); group.add(shadow);
+
+  var dustGeo = new THREE.BufferGeometry();
+  var dp = [];
+  for (var di = 0; di < 42; di++) dp.push((Math.random() - .5) * 9, (Math.random() - .5) * 5.4, -1.5 + Math.random() * 2.5);
+  dustGeo.setAttribute('position', new THREE.Float32BufferAttribute(dp, 3));
+  var dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ color: 0xf0d48a, size: .05, transparent: true, opacity: .45, depthWrite: false }));
+  scene3.add(dust);
+
+  /* product planes, lazy textures, ±2 disposal window */
+  var unitPlane = new THREE.PlaneGeometry(1, 1);
+  var meshes = new Map();
+  function ensureMesh(id){
+    if (meshes.has(id)) return meshes.get(id);
+    var p = byId(id);
+    var mat = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0 });
+    var mesh = new THREE.Mesh(unitPlane, mat);
+    mesh.visible = false; mesh.position.y = .18;
+    group.add(mesh);
+    var rec = { mesh: mesh, mat: mat, tex: null, aspect: 1, loaded: false };
+    meshes.set(id, rec);
+    var img = new Image(); img.crossOrigin = 'anonymous';
+    img.onload = function(){
+      var tex = new THREE.Texture(img); tex.needsUpdate = true; tex.anisotropy = 4;
+      rec.tex = tex; rec.aspect = img.naturalWidth / img.naturalHeight; rec.loaded = true;
+      mat.map = tex; mat.needsUpdate = true;
+    };
+    img.src = p.img;
+    return rec;
+  }
+  function fitWH(aspect){
+    var maxW = 4.7, maxH = 3.35;
+    if (aspect > maxW / maxH) return [maxW, maxW / aspect];
+    return [maxH * aspect, maxH];
+  }
+
+  /* DOM overlays */
+  var ovBox = document.getElementById('jOverlays');
+  var overlays = SCENE_IDS.map(function(id){
+    var p = byId(id);
+    var desc = p.desc.length > 90 ? p.desc.slice(0, 90) + '…' : p.desc;
+    var d = document.createElement('div');
+    d.className = 'j-ov';
+    d.innerHTML =
+      (p.badge ? '<span class="j-badge">' + p.badge + '</span>' : '') +
+      '<span class="j-tag">عرض تفاعلي 🎬</span>' +
+      '<div class="j-cat">' + (CATNAMES[p.cat] || '') + '</div>' +
+      '<h3>' + p.name + '</h3>' +
+      '<p class="j-desc">' + desc + '</p>' +
+      '<div class="j-price"><b>' + dh(p.price) + '</b><span>/ ' + p.unit + '</span></div>' +
+      '<div class="j-btns"><button class="j-add" type="button">' + btnLabel(p) + '</button>' +
+      '<button class="j-wa" type="button">💬 اطلب واتساب</button></div>';
+    d.querySelector('.j-add').addEventListener('click', function(){ addToCart(p.id); });
+    d.querySelector('.j-wa').addEventListener('click', function(){ quickOrder('بغيت نطلب: ' + p.name + ' — ' + dh(p.price) + ' / ' + p.unit); });
+    ovBox.appendChild(d);
+    return d;
+  });
+  var activeIdx = -1;
+  function setOverlay(i){
+    if (i === activeIdx) return;
+    activeIdx = i;
+    overlays.forEach(function(el, j){ el.classList.toggle('on', j === i); });
+    countEl.textContent = (i + 1) + ' / ' + N;
+  }
+
+  /* scroll progress via ScrollTrigger scrub */
+  var targetP = 0, prog = 0;
+  var st = ScrollTrigger.create({ trigger: wrap, start: 'top top', end: 'bottom bottom',
+    onUpdate: function(self){ targetP = self.progress; } });
+
+  var inView = false;
+  new IntersectionObserver(function(en){ inView = en[0].isIntersecting; }, { rootMargin: '140px' }).observe(wrap);
+
+  function resize(){
+    var w = stage.clientWidth, h = stage.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+    var a = w / h;
+    var s = a < 1 ? Math.max(.58, a / .95) : 1;
+    group.scale.set(s, s, 1);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  window.addEventListener('load', function(){ resize(); ScrollTrigger.refresh(); });
+
+  function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
+  function smooth(a, b, x){ var t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); }
+
+  var lastT = performance.now(), fpsAcc = 0, fpsN = 0;
+  function tick(now){
+    requestAnimationFrame(tick);
+    var dt = now - lastT; lastT = now;
+    if (!inView || document.hidden) return;
+    var time = now / 1000;
+    prog += (targetP - prog) * .16;
+    if (Math.abs(targetP - prog) < .00005) prog = targetP;
+    var g = prog * N;
+    var i0 = clamp(Math.floor(g), 0, N - 1);
+    barEl.style.width = (prog * 100).toFixed(2) + '%';
+    setOverlay(i0);
+
+    /* lazy window ±1 load / ±2 dispose */
+    for (var k = i0 - 1; k <= i0 + 1; k++) if (k >= 0 && k < N) ensureMesh(SCENE_IDS[k]);
+    meshes.forEach(function(rec, id){
+      if (Math.abs(window.__sceneOf[id] - i0) > 2){
+        group.remove(rec.mesh);
+        if (rec.tex) rec.tex.dispose();
+        rec.mat.dispose();
+        meshes.delete(id);
+      }
+    });
+
+    /* background lerp in the last 30% of the window */
+    var d0 = g - i0;
+    var lt = smooth(.7, 1, d0);
+    var aA = amb(SCENE_IDS[i0]), aB = amb(SCENE_IDS[Math.min(i0 + 1, N - 1)]);
+    bgU.top.value.copy(aA[0]).lerp(aB[0], lt);
+    bgU.bot.value.copy(aA[1]).lerp(aB[1], lt);
+
+    var bestOp = 0, bestRec = null;
+    meshes.forEach(function(rec, id){
+      var idx = window.__sceneOf[id];
+      var d = g - idx;
+      if (d < -.5 || d > 1.3 || !rec.loaded){ rec.mesh.visible = false; return; }
+      var e = clamp((d + .45) / .45, 0, 1);          /* enter */
+      var x = clamp((d - .8) / .45, 0, 1);           /* exit  */
+      var wprog = clamp((d + .45) / 1.25, 0, 1);     /* window sweep */
+      var op = e * (1 - x);
+      var wh = fitWH(rec.aspect);
+      var sc = .65 + .35 * e;
+      rec.mesh.scale.set(wh[0] * sc, wh[1] * sc, 1);
+      rec.mesh.position.z = -5 * (1 - e);
+      rec.mesh.position.y = .18 + Math.sin(time * 1.25 + idx * 1.7) * .06 * op + 2.3 * x;
+      rec.mesh.rotation.y = -.7 + 1.4 * wprog;
+      rec.mat.opacity = op;
+      rec.mesh.visible = op > .01;
+      if (op > bestOp){ bestOp = op; bestRec = rec; }
+    });
+    if (bestRec){
+      var bwh = fitWH(bestRec.aspect);
+      shadow.scale.set(bwh[0] * .85, .55, 1);
+      shadow.position.x = bestRec.mesh.position.x;
+      shadow.material.opacity = .5 * bestOp;
+    } else shadow.material.opacity = 0;
+
+    glow.material.opacity = .42 + .08 * Math.sin(time * .8);
+    dust.rotation.y = time * .02;
+    dust.position.y = Math.sin(time * .3) * .1;
+    renderer.render(scene3, camera);
+
+    /* FPS watchdog: step DPR down once per level */
+    fpsAcc += dt; fpsN++;
+    if (fpsN >= 90){
+      var avg = fpsAcc / fpsN; fpsAcc = 0; fpsN = 0;
+      if (avg > 22 && dprIdx < dprLevels.length - 1){
+        dprIdx++;
+        renderer.setPixelRatio(dprLevels[dprIdx]);
+        resize();
+      }
+    }
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+
 </body>
 </html>
