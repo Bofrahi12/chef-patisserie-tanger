@@ -172,7 +172,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 .main .hd-cta{background:var(--green);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:10px 22px;font-size:.95rem;transition:.2s;white-space:nowrap}
 .main .hd-cta:hover{background:#1eb856}
 .main .burger{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--ink)}
-.main .hero{position:relative;padding:110px 0 96px;background:url('img/hero.webp') center 55%/cover no-repeat}
+.main .hero{position:relative;padding:110px 0 96px;background:url('demo-patisserie/img/hero.webp') center 55%/cover no-repeat}
 .main .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(200deg,rgba(51,36,26,.72),rgba(143,85,37,.5) 55%,rgba(51,36,26,.8))}
 .main .hero-inner{position:relative;text-align:center}
 .main .hero-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.55);color:#fff;font-weight:800;font-size:.86rem;padding:6px 18px;border-radius:50px;margin-bottom:20px;backdrop-filter:blur(4px)}
@@ -330,6 +330,20 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 #toast.show{opacity:1;transform:none}
 .waf{position:fixed;bottom:20px;inset-inline-end:20px;z-index:155;background:#22c064;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 8px 24px rgba(0,0,0,.45);text-decoration:none}
 
+/* ===== cinematic banner ===== */
+.banner-cine{position:relative;min-height:72vh;display:flex;align-items:flex-end;background:url('img/render-atelier.webp') center 42%/cover no-repeat}
+.banner-cine::before{content:'';position:absolute;inset:0;background:linear-gradient(200deg,rgba(30,18,8,.12),rgba(30,18,8,.78))}
+.banner-cine .banner-txt{position:relative;padding:56px 22px;max-width:1140px;margin:0 auto;width:100%;color:#fff}
+.banner-cine h2{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.25;text-shadow:0 3px 26px rgba(0,0,0,.5)}
+.banner-cine p{color:#f3ddc2;font-size:1.1rem;margin-top:8px}
+/* ===== salé section (dark, its own world) ===== */
+.main .sale-sec{background:linear-gradient(170deg,#2a1a10,#1d110a);color:#f4ead9}
+.main .sale-sec .sale-title{color:#fff}
+.main .sale-sec .sale-sub{color:#cbb493}
+.main .sale-sec .sale-sub small{color:#a98f68}
+.main .sale-cta{margin-top:34px;border:1px dashed #c9a24b;border-radius:16px;padding:24px;text-align:center;background:rgba(201,162,75,.08)}
+.main .sale-cta p{font-weight:800;font-size:1.05rem;margin-bottom:14px;color:#f5e6cf}
+
 </style>
 </head>
 <body>
@@ -339,7 +353,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 <div id="debug"></div>
 <header id="hdr"><div class="bar">
   <div class="logo">شيف باتيسري <b>طنجة</b></div>
-  <nav class="chaps"><a href="#stage">01 · التجربة</a><a href="#catalogue">02 · الكتالوج</a><a href="#wedding">03 · الأعراس</a><a href="#contact">04 · تواصل</a></nav>
+  <nav class="chaps"><a href="#stage">01 · التجربة</a><a href="#catalogue">02 · الحلويات</a><a href="#sale">03 · المملحات</a><a href="#wedding">04 · الأعراس</a><a href="#contact">05 · تواصل</a></nav>
   <a class="btn btn-wa" data-mag style="padding:10px 20px" target="_blank" rel="noopener" href="https://wa.me/212647381609?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%BA%D9%8A%D8%AA%20%D9%86%D8%B7%D9%84%D8%A8%20%D9%85%D9%86%20%D8%B4%D9%8A%D9%81%20%D8%A8%D8%A7%D8%AA%D9%8A%D8%B3%D8%B1%D9%8A%20%D8%B7%D9%86%D8%AC%D8%A9">اطلب الآن</a>
 </div></header>
 
@@ -413,8 +427,8 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 <!-- CATALOGUE -->
 <section class="section" id="catalogue">
   <div class="container">
-    <div class="sec-kicker">✦ الكتالوج الكامل ✦</div>
-    <h2 class="sec-title">كتالوج الشيف — بأثمنة السوق المغربي</h2>
+    <div class="sec-kicker">✦ القسم الأول · الحلويات ✦</div>
+    <h2 class="sec-title">الحلويات — Le Sucré</h2>
     <p class="sec-sub">كل منتج بثمنه بالدرهم. أضف ما يعجبك إلى الطلب، وأكّد الكل في رسالة واتساب واحدة.<br><small>أثمنة استرشادية معمول بها في طنجة — الثمن النهائي يتأكد مع الشيف حسب الحجم والتصميم والتزيين.</small></p>
     <div class="cat-tools">
       <div class="tabs" id="tabs">
@@ -429,6 +443,30 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
     </div>
     <div class="prod-grid" id="grid"></div>
     <p class="nores" id="nores" style="display:none">لا توجد منتجات مطابقة — جرّب كلمة أخرى أو تصنيفاً آخر.</p>
+  </div>
+</section>
+
+
+<!-- CINEMATIC BANNER -->
+<div class="banner-cine" role="img" aria-label="الشيف يزيّن كعكة فراولة في مشغله">
+  <div class="banner-txt">
+    <div class="sec-kicker" style="color:#f0d48a">✦ مشغل الشيف ✦</div>
+    <h2>من يدي الشيف…<br>إلى مائدتك</h2>
+    <p>كل قطعة تُنهى باليد، في نفس اليوم — حلواً كانت أو مملحة.</p>
+  </div>
+</div>
+
+<!-- SALÉ -->
+<section class="section sale-sec" id="sale">
+  <div class="container">
+    <div class="sec-kicker">✦ القسم الثاني · المملحات ✦</div>
+    <h2 class="sec-title sale-title">المملحات — Le Salé & Traiteur</h2>
+    <p class="sec-sub sale-sub">قسم مستقل كلياً عن الحلويات: بسطيلة، بريوات مملحة، كيش وميني بيتزا — للبيت، للضيافة، ولمناسباتك وبوفيهاتك.<br><small>المملحات الكبيرة والبوفيهات تُحضّر على الطلب — أكّد الأجل مع الشيف في واتساب.</small></p>
+    <div class="prod-grid" id="gridSale"></div>
+    <div class="sale-cta">
+      <p>🎉 عندك مناسبة؟ بوفيه مملحات كامل على قياس عدد ضيوفك — صينية، تقديم وترتيب.</p>
+      <button class="btn btn-cara" onclick="quickOrder('بوفيه مملحات لمناسبة — بغيت عرض ثمن على قياس عدد الضيوف')">اطلب عرض ثمن للبوفيه</button>
+    </div>
   </div>
 </section>
 
@@ -764,8 +802,25 @@ const PRODUCTS = [
  {id:20, cat:'box', name:'علبة الاكتشاف', fr:'Coffret découverte', desc:'مختارات من المغربي والعصري في علبة أنيقة — أول خطوة لاكتشاف الشيف.', price:150, unit:'علبة', img:'img/p-the.webp'},
  {id:21, cat:'box', name:'علبة هدايا الشيف', fr:'Coffret prestige du Chef', desc:'تشكيلة فاخرة من أفضل منتجاتنا — للهدايا والزيارات والمناسبات.', price:250, unit:'علبة — ابتداءً من', img:'img/hero.webp', pos:'center 60%'},
  {id:22, cat:'box', name:'علبة العيد والمناسبات', fr:'Coffret Eid & fêtes', desc:'علبة احتفالية غنية بالحلويات المغربية والعصرية — تُجهّز على الطلب.', price:300, unit:'علبة — ابتداءً من', img:'img/dark.webp', pos:'center 70%'},
+ {id:23, cat:'mod', name:'فريزيي الفراولة', fr:'Fraisier', desc:'كريمة موسلين خفيفة وفراولة طازجة — يُنهى بيد الشيف في المشغل، في نفس اليوم.', price:220, unit:'كعكة 8 أشخاص', img:'img/p-fraisier.webp', badge:'توقيع الشيف ✍️'},
 ];
-const CATNAMES = {mar:'حلويات مغربية', mod:'حلويات عصرية', vien:'فيينوازري', event:'مناسبات', box:'علب هدايا'};
+const CATNAMES = {mar:'حلويات مغربية', mod:'حلويات عصرية', vien:'فيينوازري', event:'مناسبات', box:'علب هدايا', sale:'مملحات · Traiteur'};
+
+const SALE_PRODUCTS = [
+ {id:101, cat:'sale', name:'بسطيلة الدجاج واللوز', fr:'Pastilla poulet & amandes', desc:'ورقة مقرمشة، دجاج متبّل ولوز محمّر — نجمة الموائد المغربية، تكفي 6 إلى 8 أشخاص.', price:380, unit:'بسطيلة كبيرة', img:'img/render-pastilla.webp', badge:'توقيع الشيف 👑'},
+ {id:102, cat:'sale', name:'ميني بسطيلة الدجاج', fr:'Mini pastilla poulet', desc:'نفس البسطيلة الكبيرة في حجم فردي — مثالية للضيافة والبوفيهات.', price:30, unit:'قطعة', img:'img/s-pastilla-mini.webp'},
+ {id:103, cat:'sale', name:'بسطيلة فواكه البحر', fr:'Pastilla fruits de mer', desc:'قمرون وسمك أبيض وخضرة في ورقة ذهبية — تُحضّر على الطلب فقط.', price:550, unit:'بسطيلة كبيرة — على الطلب', img:'img/render-pastilla.webp', pos:'center 70%'},
+ {id:104, cat:'sale', name:'بريوات مملحة مشكّلة ×12', fr:'Briouates salées ×12', desc:'كفتة، دجاج وجبن — مثلثات ذهبية مقرمشة تخرج سخونة من الفرن.', price:100, unit:'12 قطعة', img:'img/s-briouate.webp'},
+ {id:105, cat:'sale', name:'سيكار بالجبن ×12', fr:'Cigares au fromage ×12', desc:'لفائف رقيقة محشوة بالجبن والأعشاب — رفيق الشوربات والسلطات.', price:90, unit:'12 قطعة', img:'img/s-cigare.webp'},
+ {id:106, cat:'sale', name:'ميني كيش مشكّل ×12', fr:'Mini quiches ×12', desc:'دجاج، طون وخضرة في قوالب صغيرة ذهبية — بوفيهك جاهز.', price:110, unit:'12 قطعة', img:'img/s-miniquiche.webp'},
+ {id:107, cat:'sale', name:'كيش عائلي كبير', fr:'Quiche familiale', desc:'كيش كامل للعائلة: دجاج وفطر أو طون أو خضرة — اختر الحشوة.', price:140, unit:'كيش كبير', img:'img/s-quiche.webp'},
+ {id:108, cat:'sale', name:'ميني بيتزا مشكّلة ×12', fr:'Mini pizzas ×12', desc:'صلصة طماطم، جبن ذائب وزيتون — صغيرة في الحجم، كبيرة في الذوق.', price:100, unit:'12 قطعة', img:'img/s-pizza.webp'},
+ {id:109, cat:'sale', name:'شوصون بالطون والجبن', fr:'Chausson thon & fromage', desc:'عجينة مورّقة ذهبية وحشوة طون وجبن — سخون وكيذوب.', price:12, unit:'قطعة', img:'img/s-chausson.webp'},
+ {id:110, cat:'sale', name:'فول أو فان بالدجاج والفطر', fr:'Vol-au-vent poulet-champignons', desc:'قوقعة مورّقة وكريمة دجاج وفطر — لمسة فرنسية راقية.', price:14, unit:'قطعة', img:'img/s-volauvent.webp'},
+ {id:111, cat:'sale', name:'بوتي فور مملح مشكّل', fr:'Petits fours salés', desc:'تشكيلة مملحات راقية بالكيلو — للضيافة اليومية والمناسبات.', price:180, unit:'كيلوغرام', img:'img/render-sale-assort.webp'},
+ {id:112, cat:'sale', name:'صينية مملحات للمناسبات', fr:'Plateau salé événementiel', desc:'صينية كاملة مشكّلة على قياس مناسبتك — الحجز قبل 72 ساعة.', price:400, unit:'صينية — ابتداءً من', img:'img/render-sale-vitrine.webp', badge:'للمناسبات 🎉'},
+];
+const ALL = PRODUCTS.concat(SALE_PRODUCTS);
 let cart = {};
 try { cart = JSON.parse(localStorage.getItem('chef_cart') || '{}'); } catch(e){ cart = {}; }
 let curCat = 'all', curQ = '';
@@ -790,14 +845,14 @@ function render(){
 }
 function saveCart(){ localStorage.setItem('chef_cart', JSON.stringify(cart)); }
 function cartCount(){ return Object.values(cart).reduce((a,b)=>a+b,0); }
-function cartSubtotal(){ return Object.entries(cart).reduce((s,[id,q])=>{ const p = PRODUCTS.find(x=>x.id==id); return p ? s + p.price*q : s; },0); }
+function cartSubtotal(){ return Object.entries(cart).reduce((s,[id,q])=>{ const p = ALL.find(x=>x.id==id); return p ? s + p.price*q : s; },0); }
 function toast(msg){
   const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
   clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove('show'), 2200);
 }
 function addToCart(id){
   cart[id] = (cart[id]||0) + 1; saveCart(); syncCart();
-  const p = PRODUCTS.find(x=>x.id===id);
+  const p = ALL.find(x=>x.id===id);
   toast('✓ أُضيف: ' + p.name);
   const fab = document.getElementById('cartFab'); fab.classList.remove('bump'); void fab.offsetWidth; fab.classList.add('bump');
 }
@@ -812,7 +867,7 @@ function syncCart(){
   if (!ids.length){
     box.innerHTML = '<div class="cd-empty">طلبك فارغ حالياً 🍰<br>أضف منتجات من الكتالوج</div>';
   } else {
-    box.innerHTML = ids.map(id => { const p = PRODUCTS.find(x=>x.id==id); const q = cart[id]; return `
+    box.innerHTML = ids.map(id => { const p = ALL.find(x=>x.id==id); const q = cart[id]; return `
       <div class="cd-item">
         <div><div class="n">${p.name}</div><div class="p">${dh(p.price)} × ${q} = ${dh(p.price*q)}</div></div>
         <div>
@@ -841,7 +896,7 @@ document.getElementById('checkoutBtn').addEventListener('click', ()=>{
   if (!ids.length){ toast('طلبك فارغ — أضف منتجاً أولاً'); return; }
   const sub = cartSubtotal(); const ship = sub >= 300 ? 0 : 25;
   let lines = ['السلام شيف باتيسري طنجة 🍰', 'بغيت نطلب من الموقع:', '——————————'];
-  ids.forEach(id => { const p = PRODUCTS.find(x=>x.id==id); lines.push('• ' + p.name + ' × ' + cart[id] + ' — ' + dh(p.price*cart[id])); });
+  ids.forEach(id => { const p = ALL.find(x=>x.id==id); lines.push('• ' + p.name + ' × ' + cart[id] + ' — ' + dh(p.price*cart[id])); });
   lines.push('——————————');
   lines.push('المجموع الفرعي: ' + dh(sub));
   lines.push('التوصيل: ' + (ship === 0 ? 'مجاني' : dh(ship)));
@@ -877,6 +932,24 @@ document.getElementById('leadForm').addEventListener('submit', e=>{
   window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(parts.join('\n')), '_blank');
 });
 render(); syncCart();
+
+function renderSale(){
+  const grid = document.getElementById('gridSale');
+  if (!grid) return;
+  grid.innerHTML = SALE_PRODUCTS.map(p => `
+    <article class="product">
+      ${p.badge ? `<span class="p-badge">${p.badge}</span>` : ''}
+      <img src="${p.img}" alt="${p.name} — ${p.fr}" loading="lazy" ${p.pos ? `style="object-position:${p.pos}"` : ''}>
+      <div class="p-body">
+        <span class="p-cat">مملحات · <span class="p-fr">${p.fr}</span></span>
+        <h3 class="p-name">${p.name}</h3>
+        <p class="p-desc">${p.desc}</p>
+        <div class="p-price"><span class="amount">${dh(p.price)}</span><span class="unit">/ ${p.unit}</span></div>
+        <button class="order-btn" onclick="addToCart(${p.id})">🛒 أضف إلى الطلب</button>
+      </div>
+    </article>`).join('');
+}
+renderSale();
 
 </script>
 <script type="module">
