@@ -344,6 +344,21 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 .main .sale-cta{margin-top:34px;border:1px dashed #c9a24b;border-radius:16px;padding:24px;text-align:center;background:rgba(201,162,75,.08)}
 .main .sale-cta p{font-weight:800;font-size:1.05rem;margin-bottom:14px;color:#f5e6cf}
 
+/* ===== vitrine (stars) ===== */
+.main .vitrine-sec{background:linear-gradient(180deg,#fff8ec,#fdf1dc)}
+.v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px}
+.vcard{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 18px 44px rgba(90,55,10,.14);border:1px solid #f0dfba;display:flex;flex-direction:column;transition:transform .35s}
+.vcard:hover{transform:translateY(-6px)}
+.vcard .v-img{position:relative}
+.vcard .v-img img{width:100%;height:290px;object-fit:cover;display:block}
+.vcard .v-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.vcard h3{font-size:1.3rem;font-weight:900;color:#3a2410}
+.vcard .v-body p{color:#6b543c;font-size:.95rem;flex:1}
+.vcard .v-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.vcard .amount{font-size:1.45rem}
+.vitrine-note{text-align:center;margin-top:28px;font-weight:700;color:#7a5a28}
+.vitrine-note a{color:#b8860b;text-decoration:underline}
+
 </style>
 </head>
 <body>
@@ -353,7 +368,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 <div id="debug"></div>
 <header id="hdr"><div class="bar">
   <div class="logo">شيف باتيسري <b>طنجة</b></div>
-  <nav class="chaps"><a href="#stage">01 · التجربة</a><a href="#catalogue">02 · الحلويات</a><a href="#sale">03 · المملحات</a><a href="#wedding">04 · الأعراس</a><a href="#contact">05 · تواصل</a></nav>
+  <nav class="chaps"><a href="#stage">01 · التجربة</a><a href="#vitrine">02 · الواجهة 🔥</a><a href="#catalogue">03 · الحلويات</a><a href="#sale">04 · المملحات</a><a href="#wedding">05 · الأعراس</a><a href="#contact">06 · تواصل</a></nav>
   <a class="btn btn-wa" data-mag style="padding:10px 20px" target="_blank" rel="noopener" href="https://wa.me/212647381609?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%BA%D9%8A%D8%AA%20%D9%86%D8%B7%D9%84%D8%A8%20%D9%85%D9%86%20%D8%B4%D9%8A%D9%81%20%D8%A8%D8%A7%D8%AA%D9%8A%D8%B3%D8%B1%D9%8A%20%D8%B7%D9%86%D8%AC%D8%A9">اطلب الآن</a>
 </div></header>
 
@@ -423,6 +438,18 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
   <div class="step-item"><span class="s-num">2</span><span>أكّد عبر واتساب<small>طلبك يوصل مباشرة للشيف</small></span></div>
   <div class="step-item"><span class="s-num">3</span><span>استلم حلوياتك<small>من المحل أو توصيل داخل طنجة</small></span></div>
 </div></div>
+
+
+<!-- VITRINE : CHEESECAKES & CÉLÉBRATION -->
+<section class="section vitrine-sec" id="vitrine">
+  <div class="container">
+    <div class="sec-kicker">✦ واجهة الشيف ✦</div>
+    <h2 class="sec-title">الأكثر طلباً في السوق 🔥</h2>
+    <p class="sec-sub">الواجهة ديال الشيف: <strong>كيك ديزاين</strong> من بروفايلو الحقيقي (عزوبية، أطفال، صور شخصية) + <strong>التشيز كيك</strong> الأكثر طلباً في السوق — بصور حقيقية من شغلو.</p>
+    <div class="v-grid" id="gridVitrine"></div>
+    <p class="vitrine-note">🎂 كيك احتفال بتصميم خاص (ثيم، صورة، اسم)؟ <a href="#surcommande">اطلب تصميمك من قسم الطلبات الخاصة ↓</a></p>
+  </div>
+</section>
 
 <!-- CATALOGUE -->
 <section class="section" id="catalogue">
@@ -797,11 +824,23 @@ const PRODUCTS = [
  {id:15, cat:'vien', name:'بان أو شوكولا', fr:'Pain au chocolat', desc:'عجينة مورّقة وأصابع شوكولاتة سوداء — فطور الفرنسيين على أصوله.', price:14, unit:'قطعة', img:'img/hero.webp', pos:'8% 68%'},
  {id:16, cat:'vien', name:'بريوش العائلة', fr:'Brioche familiale', desc:'بريوش طري بالزبدة وماء الزهر — للفطور والعصريات العائلية.', price:35, unit:'قطعة كبيرة', img:'img/p-vitrine.webp'},
  {id:17, cat:'event', name:'كعكة عيد ميلاد كلاسيك', fr:'Layer cake anniversaire', desc:'6 إلى 8 أشخاص، نكهة من اختيارك وكتابة الاسم — ابتداءً من هاد الثمن حسب التصميم.', price:250, unit:'ابتداءً من', img:'img/p-wedding-detail.webp'},
- {id:18, cat:'event', name:'Number / Letter Cake', fr:'Number cake', desc:'رقم أو حرف مزيّن بالفواكه والماكارون والورود — نجم إنستغرام.', price:300, unit:'ابتداءً من', img:'img/p-tartelette.webp', pos:'center 30%'},
+ {id:18, cat:'event', name:'Number / Letter Cake', fr:'Number cake', desc:'رقم أو حرف مزيّن بالفواكه والماكارون والورود — نجم إنستغرام.', price:300, unit:'ابتداءً من', img:'img/render-number-cake.webp', pos:'center 30%'},
  {id:19, cat:'event', name:'كعكة عرس — طابقين', fr:'Wedding cake 2 étages', desc:'حتى 50 ضيفاً، تصميم مخصّص وتوصيل وتركيب في القاعة — التفاصيل في واتساب.', price:1600, unit:'ابتداءً من', img:'img/g2.webp', badge:'على الطلب 👰'},
  {id:20, cat:'box', name:'علبة الاكتشاف', fr:'Coffret découverte', desc:'مختارات من المغربي والعصري في علبة أنيقة — أول خطوة لاكتشاف الشيف.', price:150, unit:'علبة', img:'img/p-the.webp'},
  {id:21, cat:'box', name:'علبة هدايا الشيف', fr:'Coffret prestige du Chef', desc:'تشكيلة فاخرة من أفضل منتجاتنا — للهدايا والزيارات والمناسبات.', price:250, unit:'علبة — ابتداءً من', img:'img/hero.webp', pos:'center 60%'},
  {id:22, cat:'box', name:'علبة العيد والمناسبات', fr:'Coffret Eid & fêtes', desc:'علبة احتفالية غنية بالحلويات المغربية والعصرية — تُجهّز على الطلب.', price:300, unit:'علبة — ابتداءً من', img:'img/dark.webp', pos:'center 70%'},
+ {id:30, cat:'mod', name:'تشيز كيك سان سيباستيان', fr:'Cheesecake San Sebastián (Basque)', desc:'النجم الأول في السوق: وجه محمّر بالكراميل وقلب كريمي كيذوب — الوصفة الأصلية الباسكية.', price:240, unit:'كامل — 8 أشخاص', img:'img/render-cheesecake-basque.webp', badge:'الأكثر طلباً 🔥'},
+ {id:31, cat:'mod', name:'تشيز كيك لوتس', fr:'Cheesecake Lotus Biscoff', desc:'قاعدة بسكويت، كريمة لوتس وصوص كراميل كيسيل — الترند اللي ما كيوقفش.', price:260, unit:'كامل — 8 أشخاص', img:'img/p-cheesecake-lotus.webp', badge:'الأكثر طلباً 🔥'},
+ {id:32, cat:'mod', name:'تشيز كيك الفستق', fr:'Cheesecake Pistache', desc:'كريمة فستق فاخرة وفستق مجروش — للذواقة.', price:280, unit:'كامل — 8 أشخاص', img:'img/p-cheesecake-pistache.webp'},
+ {id:34, cat:'event', name:'كيك احتفالات «دريب»', fr:'Drip Cake de célébration', desc:'كيك عالي بغاناش شوكولاتة كيسيل وأوريو (من شغل الشيف الحقيقي في الصورة) — نكهات وألوان على اختيارك.', price:290, unit:'ابتداءً من — على القياس', img:'img/r-drip-oreo.webp', badge:'الأكثر طلباً 🔥'},
+ {id:40, cat:'mod', name:'كاب كيك مشكّل ×12', fr:'Cupcakes ×12', desc:'كاب كيك بالكريمة واللؤلؤ القابل للأكل — ألوان ونكهات على ذوقك، للمناسبات والبوفيهات.', price:120, unit:'12 قطعة', img:'img/r-cupcakes.webp', badge:'من بروفايل الشيف 📸'},
+ {id:41, cat:'event', name:'بوبس كيك وميني كيك', fr:'Cake pops & mini cakes', desc:'بوبس كيك على أعواد وميني كيك مزيّنة — نجوم حفلات الأطفال وأعياد الميلاد.', price:96, unit:'12 قطعة بوبس', img:'img/r-minicake.webp', badge:'من بروفايل الشيف 📸'},
+ {id:42, cat:'event', name:'كيك ديزاين — ثيم أطفال', fr:'Cake design thème enfant', desc:'شخصية ولدك المفضلة على الكيك (ستيتش، أميرات، أبطال...) — تصميم كامل على الطلب.', price:320, unit:'ابتداءً من', img:'img/r-stitch.webp', badge:'من بروفايل الشيف 📸'},
+ {id:43, cat:'event', name:'كيك بالصورة الشخصية', fr:'Photo cake personnalisé', desc:'صورتك أو صورة اللي كتحب مطبوعة على الكيك — باك لشخصين لأعياد الميلاد والزواج.', price:280, unit:'كيك + كاب كيك', img:'img/r-bento.webp', badge:'من بروفايل الشيف 📸'},
+ {id:44, cat:'mod', name:'تيراميسو وكؤوس إيطالية ×12', fr:'Tiramisu & verrines italiennes', desc:'كيك إيطالي على الأصول: تيراميسو وكؤوس فواكه وشوكولاتة — خفيفة وراقية للبوفيه.', price:200, unit:'12 كأس', img:'img/r-verrines.webp', badge:'من بروفايل الشيف 📸'},
+ {id:45, cat:'event', name:'كيك العزوبية «Bride Squad»', fr:'Bride Squad cake', desc:'كيك توديع العزوبية برسمة العروس وصديقاتها — الأكثر مشاهدة في بروفايل الشيف (3.5K).', price:350, unit:'كيك مناسبة', img:'img/r-bride.webp', badge:'الأكثر مشاهدة 👀'},
+ {id:46, cat:'event', name:'كيك «Birthday Queen» بالتاج', fr:'Birthday Queen cake', desc:'كيك وردي ملكي بتاج فضي وشرائط — لأميرات أعياد الميلاد.', price:340, unit:'كيك مناسبة', img:'img/r-queen.webp', badge:'من بروفايل الشيف 📸'},
+ {id:47, cat:'event', name:'كيك ذهبي كلاسيك', fr:'Gâteau doré classique', desc:'أبيض وذهبي بلآلئ ذهبية وتاج — أناقة هادئة لأي احتفال.', price:300, unit:'كيك مناسبة', img:'img/r-goldcake.webp', badge:'من بروفايل الشيف 📸'},
  {id:23, cat:'mod', name:'فريزيي الفراولة', fr:'Fraisier', desc:'كريمة موسلين خفيفة وفراولة طازجة — يُنهى بيد الشيف في المشغل، في نفس اليوم.', price:220, unit:'كعكة 8 أشخاص', img:'img/p-fraisier.webp', badge:'توقيع الشيف ✍️'},
 ];
 const CATNAMES = {mar:'حلويات مغربية', mod:'حلويات عصرية', vien:'فيينوازري', event:'مناسبات', box:'علب هدايا', sale:'مملحات · Traiteur'};
@@ -950,6 +989,26 @@ function renderSale(){
     </article>`).join('');
 }
 renderSale();
+
+const VITRINE_IDS = [45, 42, 34, 30, 43, 31];
+function renderVitrine(){
+  const grid = document.getElementById('gridVitrine');
+  if (!grid) return;
+  grid.innerHTML = VITRINE_IDS.map(id => ALL.find(x=>x.id===id)).filter(Boolean).map(p => `
+    <article class="vcard">
+      <div class="v-img"><img src="${p.img}" alt="${p.name} — ${p.fr}" loading="lazy">${p.badge ? `<span class="p-badge">${p.badge}</span>` : ''}</div>
+      <div class="v-body">
+        <span class="p-cat">${CATNAMES[p.cat] || ''} · <span class="p-fr">${p.fr}</span></span>
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <div class="v-foot">
+          <div class="p-price"><span class="amount">${dh(p.price)}</span><span class="unit">/ ${p.unit}</span></div>
+          <button class="order-btn" onclick="addToCart(${p.id})">🛒 اطلب دابا</button>
+        </div>
+      </div>
+    </article>`).join('');
+}
+renderVitrine();
 
 </script>
 <script type="module">
