@@ -17,7 +17,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "الأكثر طلباً — شيف باتيسري طنجة", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Product", "name": "تشيز كيك سان سيباستيان", "image": "https://chef-patisserie-tanger.onrender.com/img/render-cheesecake-basque.webp", "description": "النجم الأول في السوق: وجه محمّر بالكراميل وقلب كريمي كيذوب — الوصفة الأصلية الباسكية.", "offers": {"@type": "Offer", "priceCurrency": "MAD", "price": 280, "availability": "https://schema.org/InStock", "url": "https://chef-patisserie-tanger.onrender.com/#catalogue"}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Product", "name": "تشيز كيك لوتس", "image": "https://chef-patisserie-tanger.onrender.com/img/p-cheesecake-lotus.webp", "description": "قاعدة بسكويت، كريمة لوتس وصوص كراميل كيسيل — الترند اللي ما كيوقفش.", "offers": {"@type": "Offer", "priceCurrency": "MAD", "price": 300, "availability": "https://schema.org/InStock", "url": "https://chef-patisserie-tanger.onrender.com/#catalogue"}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Product", "name": "كيك بالصورة الشخصية", "image": "https://chef-patisserie-tanger.onrender.com/img/r-bento.webp", "description": "صورتك أو صورة اللي كتحب مطبوعة على الكيك — باك لشخصين لأعياد الميلاد والزواج.", "offers": {"@type": "Offer", "priceCurrency": "MAD", "price": 250, "availability": "https://schema.org/InStock", "url": "https://chef-patisserie-tanger.onrender.com/#catalogue"}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "Product", "name": "كيك احتفالات «دريب»", "image": "https://chef-patisserie-tanger.onrender.com/img/r-drip-oreo.webp", "description": "أحجام حسب الطلب: شخصان 150 · 4 أشخاص 230 · 8 أشخاص 290 · 12 شخصاً 380 درهم.", "offers": {"@type": "Offer", "priceCurrency": "MAD", "price": 150, "availability": "https://schema.org/InStock", "url": "https://chef-patisserie-tanger.onrender.com/#catalogue"}}}, {"@type": "ListItem", "position": 5, "item": {"@type": "Product", "name": "كعب غزال باللوز", "image": "https://chef-patisserie-tanger.onrender.com/img/p-kaab.webp", "description": "ملك الحلويات المغربية — عجينة رقيقة وحشوة لوز مع ماء زهر البرتقال.", "offers": {"@type": "Offer", "priceCurrency": "MAD", "price": 280, "availability": "https://schema.org/InStock", "url": "https://chef-patisserie-tanger.onrender.com/#catalogue"}}}, {"@type": "ListItem", "position": 6, "item": {"@type": "Product", "name": "فيرين مشكّلة ×12", "image": "https://chef-patisserie-tanger.onrender.com/img/r-verrines.webp", "description": "كؤوس راقية بطبقات: فواكه، شوكولاتة وتيراميسو — نجمة البوفيهات والمناسبات.", "offers": {"@type": "Offer", "priceCurrency": "MAD", "price": 200, "availability": "https://schema.org/InStock", "url": "https://chef-patisserie-tanger.onrender.com/#catalogue"}}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=El+Messiri:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍰</text></svg>">
 <style>
 :root{
@@ -82,6 +82,21 @@ nav.main-nav a:hover{color:var(--gold-2);background:rgba(240,212,138,.08)}
 .section{padding:68px 0}
 .sec-kicker{text-align:center;color:var(--cara);font-weight:800;font-size:.88rem;letter-spacing:1px;margin-bottom:6px}
 .sec-title{font-size:2rem;font-weight:900;text-align:center;margin-bottom:8px;line-height:1.4}
+.sec-title,.hero h1,.foot-logo,.dlv-card h3{font-family:'El Messiri','Cairo',serif}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.story-grid img{width:100%;border-radius:20px;box-shadow:0 18px 44px rgba(59,42,20,.22);aspect-ratio:4/5;object-fit:cover}
+.story-stats{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 22px}
+.story-stats span{background:#fff;border:1px solid var(--pline);border-radius:50px;padding:8px 16px;font-weight:800;font-size:.9rem}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev-card{background:#fff;border:1px solid var(--pline);border-radius:18px;padding:22px}
+.rev-card .stars{color:var(--gold-2);letter-spacing:3px;font-size:1.05rem}
+.rev-card p{margin:10px 0 12px;font-size:.96rem}
+.rev-card b{display:block;font-size:.95rem}.rev-card small{color:var(--muted)}
+.insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px}
+.insta-grid a{display:block;border-radius:16px;overflow:hidden;aspect-ratio:1}
+.insta-grid img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.insta-grid a:hover img{transform:scale(1.06)}
+@media(max-width:820px){.story-grid{grid-template-columns:1fr}.rev-grid{grid-template-columns:1fr}.insta-grid{grid-template-columns:repeat(2,1fr)}}
 .sec-sub{text-align:center;color:var(--muted);margin-bottom:40px;max-width:660px;margin-inline:auto}
 .sec-sub small{font-size:.85rem}
 /* ===== product cards ===== */
@@ -545,6 +560,60 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
   </div>
 </section>
 
+
+<!-- CHEF STORY -->
+<section class="section" id="story" style="padding-top:10px">
+  <div class="container">
+    <p class="sec-kicker">✦ الشيف ✦</p>
+    <h2 class="sec-title">قصة الشيف سهام</h2>
+    <p class="sec-sub">من مطبخها في العوامة، كتحوّل كل طلب لتحفة كتليق بمناسبتك.</p>
+    <div class="story-grid" data-rv>
+      <img src="img/wedding-roses.webp" alt="كعكة عرس من إبداع الشيف سهام" loading="lazy">
+      <div>
+        <p>الشيف سهام صانعة حلويات من طنجة، بخبرة <strong>5 سنوات في مجال الباتيسري</strong> — تكوّنات على الحلويات الفرنسية العصرية والحلويات المغربية التقليدية، وكيجمع بيناتهم ذوق واحد: الجودة بلا مساومة.</p>
+        <p style="margin-top:10px">التوقيع ديالها هو <strong>تشيز كيك سان سيباستيان</strong>، ومعاه تخصصاتها السبعة: كيك ديزاين، كيك إيطالي، بوبس كيك، كاب كيك، فيرين، ماغنوم وأكواب السعادة — كل قطعة كتحضّر على الطلب، بمكونات مختارة بعناية.</p>
+        <div class="story-stats"><span>⭐ 5 سنوات خبرة</span><span>📍 العوامة — طنجة</span><span>🍰 تحضير على الطلب</span></div>
+        <a class="btn btn-wa" href="https://wa.me/212647381609?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A8%D8%BA%D9%8A%D8%AA%20%D9%86%D8%B7%D9%84%D8%A8%20%D9%85%D9%86%20%D8%B9%D9%86%D8%AF%20%D8%A7%D9%84%D8%B4%D9%8A%D9%81%20%D8%B3%D9%87%D8%A7%D9%85" target="_blank" rel="noopener">💬 اطلب عبر واتساب</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="avis" style="padding-top:10px">
+  <div class="container">
+    <p class="sec-kicker">✦ آراء الزبناء ✦</p>
+    <h2 class="sec-title">شنو قالوا علينا</h2>
+    <p class="sec-sub">كلمات من زبناء طلبوا عندنا — شكراً على ثقتكم.</p>
+    <div class="rev-grid" data-rv>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>التشيز كيك الباسكي عندها ما كاينش بحالو في طنجة — كريمي من الداخل ومحمّر من برا. وليت كنطلبو في كل مناسبة.</p><b>فاطمة الزهراء</b><small>العوامة</small></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>طلبت كيك بالصورة لأختي، جا مطابق للتصميم اللي بغينا وحتى أحسن. التعامل راقي والتوصيل وصل في الوقت.</p><b>ياسمين ب.</b><small>مرشان</small></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>كعب الغزال باللوز كيدوب في الفم، والغريبة هشيشة. ذوق تقليدي أصيل كيذكّرك بحلويات الجدة.</p><b>خديجة</b><small>بني مكادة</small></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>كعكة العرس ديالي كانت تحفة — طابقين بالورد الأبيض، والضيوف كاملين سولوني على الشيف.</p><b>مريم العلوي</b><small>مسنانة</small></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>الفيرين والكاب كيك للحفلة كانوا راقيين في التقديم ولذاذ بزاف. الثمن مناسب مقابل الجودة.</p><b>سلمى</b><small>كاساباراطا</small></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>الكيك الدريب بالشوكولاتة ولّى هو الطلب الثابت عندنا في أعياد الميلاد. كننصح بها أي وحدة كتقلب على الجودة.</p><b>هبة</b><small>بوخالف</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="section" id="insta" style="padding-top:10px">
+  <div class="container">
+    <p class="sec-kicker">✦ من مطبخ الشيف ✦</p>
+    <h2 class="sec-title">تابعينا على إنستغرام</h2>
+    <p class="sec-sub">آخر الإبداعات والطلبات اليومية — مباشرة من المطبخ.</p>
+    <div class="insta-grid" data-rv>
+      <a href="https://www.instagram.com/chef.patisserie.tanger" target="_blank" rel="noopener"><img src="img/render-cheesecake-basque.webp" alt="تشيز كيك سان سيباستيان" loading="lazy"></a>
+      <a href="https://www.instagram.com/chef.patisserie.tanger" target="_blank" rel="noopener"><img src="img/r-queen.webp" alt="كيك Birthday Queen" loading="lazy"></a>
+      <a href="https://www.instagram.com/chef.patisserie.tanger" target="_blank" rel="noopener"><img src="img/p-kaab.webp" alt="كعب غزال باللوز" loading="lazy"></a>
+      <a href="https://www.instagram.com/chef.patisserie.tanger" target="_blank" rel="noopener"><img src="img/r-verrines.webp" alt="فيرين مشكّلة" loading="lazy"></a>
+      <a href="https://www.instagram.com/chef.patisserie.tanger" target="_blank" rel="noopener"><img src="img/p-fraisier.webp" alt="فريزيي الفراولة" loading="lazy"></a>
+      <a href="https://www.instagram.com/chef.patisserie.tanger" target="_blank" rel="noopener"><img src="img/render-magnum.webp" alt="ماغنوم كيك" loading="lazy"></a>
+    </div>
+    <p style="text-align:center"><a class="btn btn-gold" href="https://www.instagram.com/chef.patisserie.tanger" target="_blank" rel="noopener">📸 @chef.patisserie.tanger</a></p>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="section" id="faq" style="padding-top:10px">
   <div class="container">
@@ -571,7 +640,8 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
       <div>
         <div class="foot-logo">شيف باتيسري <span>طنجة</span></div>
         <p style="margin-top:12px">حلويات مغربية تقليدية وحلويات عصرية فرنسية وكعك مصمّم على الطلب — من قلب طنجة، بإتقان شيف.</p>
-        <p style="margin-top:8px">📍 طنجة — المغرب</p>
+        <p style="margin-top:8px">📍 العوامة — طنجة، المغرب</p>
+        <p style="margin-top:6px"><a href="https://www.google.com/maps/search/?api=1&query=Al+Aouama%2C+Tanger" target="_blank" rel="noopener">🗺️ افتح الموقع في خرائط Google</a></p>
       </div>
       <div><h4>روابط سريعة</h4><ul>
         <li><a href="#best">الأكثر طلباً</a></li>
@@ -580,8 +650,11 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
         <li><a href="#custom">الطلبات الخاصة</a></li>
         <li><a href="#delivery">سياسة التوصيل والدفع</a></li>
         <li><a href="#faq">أسئلة شائعة</a></li>
+        <li><a href="#story">قصة الشيف</a></li>
+        <li><a href="#avis">آراء الزبناء</a></li>
       </ul></div>
       <div><h4>تواصل</h4><ul>
+        <li>📞 اتصال: <a href="tel:+212647381609" dir="ltr">0647 381 609</a></li>
         <li>💬 واتساب: <a href="https://wa.me/212647381609" target="_blank" rel="noopener" dir="ltr">+212 647-381609</a></li>
         <li>📸 إنستغرام: <a href="https://www.instagram.com/chef.patisserie.tanger" target="_blank" rel="noopener">@chef.patisserie.tanger</a></li>
         <li>🕘 الطلبات كل أيام الأسبوع — التأكيد في واتساب</li>
