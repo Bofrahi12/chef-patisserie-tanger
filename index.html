@@ -416,7 +416,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
   <div class="ovl" id="ov4" style="opacity:0">
     <div class="eyebrow">// Scene 04 — The Collection</div>
     <h2>التشكيلة كاملة،<br>قدام عينيك.</h2>
-    <p>بطاقات كتطفو في العمق — كيك الديزاين، الكيك الإيطالي وكعكات الأعراس. البطاقة اللي في الوسط هي النجمة.</p>
+    <p>بطاقات كتطفو في العمق — كيك الديزاين، كيك الأميرة بالتاج، الماغنوم وكيك الدريب. البطاقة اللي في الوسط هي النجمة.</p>
   </div>
 
   <div class="ovl" id="ov5" style="opacity:0">
@@ -709,10 +709,10 @@ const SCENES = [
 const LAYER_SRC = {
   screen:     { make:'screen', src:'img/hero.webp', url:'chef.patisserie.tanger',  w:6.6 },
   box:        { make:'photo',  src:'img/g2.webp',   w:5.4 },
-  cardDouble: { make:'card',   src:'img/g1.webp',   label:'تشيز كيك سان سيباستيان — 240 درهم', w:3.5 },
-  cardClassic:{ make:'card',   src:'img/g3.webp',   label:'كيك بالصورة الشخصية — 280 درهم',      w:3.5 },
-  cardExp:    { make:'card',   src:'img/dark.webp', label:'فيرين مشكّلة ×12 — 200 درهم',    w:3.5 },
-  cardShop:   { make:'card',   src:'img/hero.webp', label:'كيكة عرس — من 1,600 درهم', w:3.5 }
+  cardDouble: { make:'card',   src:'img/r-stitch.webp',   label:'كيك ديزاين — ثيم أطفال — 320 درهم', w:3.5 },
+  cardClassic:{ make:'card',   src:'img/r-queen.webp',   label:'كيك «Birthday Queen» بالتاج — 340 درهم',      w:3.5 },
+  cardExp:    { make:'card',   src:'img/render-magnum.webp', label:'ماغنوم كيك ×6 — 90 درهم',    w:3.5 },
+  cardShop:   { make:'card',   src:'img/r-drip-oreo.webp', label:'كيك احتفالات «دريب» — 290 درهم', w:3.5 }
 };
 window.STAGE = { layers:{}, cam:{...SCENES[0].cam}, ready:false };
 Object.keys(SCENES[0].layers).forEach(k => { window.STAGE.layers[k] = {...SCENES[0].layers[k]}; });
