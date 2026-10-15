@@ -443,9 +443,9 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 <!-- VITRINE : CHEESECAKES & CÉLÉBRATION -->
 <section class="section vitrine-sec" id="vitrine">
   <div class="container">
-    <div class="sec-kicker">✦ واجهة الشيف ✦</div>
-    <h2 class="sec-title">الأكثر طلباً في السوق 🔥</h2>
-    <p class="sec-sub">الواجهة ديال الشيف: <strong>كيك ديزاين</strong> من بروفايلو الحقيقي (عزوبية، أطفال، صور شخصية) + <strong>التشيز كيك</strong> الأكثر طلباً في السوق — بصور حقيقية من شغلو.</p>
+    <div class="sec-kicker">✦ تخصصات الشيف ✦</div>
+    <h2 class="sec-title">واجهة التخصصات 🔥</h2>
+    <p class="sec-sub">هادو هما التخصصات اللي مركزة عليهم الشيف دابا: <strong>كيك ديزاين · كيك إيطالي · بوبس كيك · كاب كيك · فيرين · ماغنوم · أكواب السعادة</strong> — بصور حقيقية من شغلها، وبأثمنة السوق المغربي. وباقي الكتالوج كامل تحت ↓</p>
     <div class="v-grid" id="gridVitrine"></div>
     <p class="vitrine-note">🎂 كيك احتفال بتصميم خاص (ثيم، صورة، اسم)؟ <a href="#surcommande">اطلب تصميمك من قسم الطلبات الخاصة ↓</a></p>
   </div>
@@ -837,10 +837,13 @@ const PRODUCTS = [
  {id:41, cat:'event', name:'بوبس كيك وميني كيك', fr:'Cake pops & mini cakes', desc:'بوبس كيك على أعواد وميني كيك مزيّنة — نجوم حفلات الأطفال وأعياد الميلاد.', price:96, unit:'12 قطعة بوبس', img:'img/r-minicake.webp', badge:'من بروفايل الشيف 📸'},
  {id:42, cat:'event', name:'كيك ديزاين — ثيم أطفال', fr:'Cake design thème enfant', desc:'شخصية ولدك المفضلة على الكيك (ستيتش، أميرات، أبطال...) — تصميم كامل على الطلب.', price:320, unit:'ابتداءً من', img:'img/r-stitch.webp', badge:'من بروفايل الشيف 📸'},
  {id:43, cat:'event', name:'كيك بالصورة الشخصية', fr:'Photo cake personnalisé', desc:'صورتك أو صورة اللي كتحب مطبوعة على الكيك — باك لشخصين لأعياد الميلاد والزواج.', price:280, unit:'كيك + كاب كيك', img:'img/r-bento.webp', badge:'من بروفايل الشيف 📸'},
- {id:44, cat:'mod', name:'تيراميسو وكؤوس إيطالية ×12', fr:'Tiramisu & verrines italiennes', desc:'كيك إيطالي على الأصول: تيراميسو وكؤوس فواكه وشوكولاتة — خفيفة وراقية للبوفيه.', price:200, unit:'12 كأس', img:'img/r-verrines.webp', badge:'من بروفايل الشيف 📸'},
+ {id:44, cat:'mod', name:'فيرين مشكّلة ×12', fr:'Verrines assorties ×12', desc:'كؤوس راقية بطبقات: فواكه، شوكولاتة وتيراميسو — نجمة البوفيهات والمناسبات.', price:200, unit:'12 كأس', img:'img/r-verrines.webp', badge:'من بروفايل الشيف 📸'},
  {id:45, cat:'event', name:'كيك العزوبية «Bride Squad»', fr:'Bride Squad cake', desc:'كيك توديع العزوبية برسمة العروس وصديقاتها — الأكثر مشاهدة في بروفايل الشيف (3.5K).', price:350, unit:'كيك مناسبة', img:'img/r-bride.webp', badge:'الأكثر مشاهدة 👀'},
  {id:46, cat:'event', name:'كيك «Birthday Queen» بالتاج', fr:'Birthday Queen cake', desc:'كيك وردي ملكي بتاج فضي وشرائط — لأميرات أعياد الميلاد.', price:340, unit:'كيك مناسبة', img:'img/r-queen.webp', badge:'من بروفايل الشيف 📸'},
  {id:47, cat:'event', name:'كيك ذهبي كلاسيك', fr:'Gâteau doré classique', desc:'أبيض وذهبي بلآلئ ذهبية وتاج — أناقة هادئة لأي احتفال.', price:300, unit:'كيك مناسبة', img:'img/r-goldcake.webp', badge:'من بروفايل الشيف 📸'},
+ {id:48, cat:'mod', name:'كيك إيطالي — تيراميسو', fr:'Tiramisu italien', desc:'التيراميسو الأصلي بالقهوة والماسكاربوني — الكيك الإيطالي اللي كتتميز بيه الشيف.', price:220, unit:'كامل — 8 أشخاص', img:'img/r-verrines.webp', pos:'right center', badge:'من بروفايل الشيف 📸'},
+ {id:49, cat:'event', name:'ماغنوم كيك ×6', fr:'Magnum cakesicles ×6', desc:'كيك على شكل ماغنوم مغطى بالشوكولاتة اللامعة والذهب — ترند الحفلات وأعياد الميلاد.', price:90, unit:'6 قطع', img:'img/render-magnum.webp', badge:'ترند الحفلات 🎉'},
+ {id:50, cat:'mod', name:'أكواب السعادة ×6', fr:'Cups of happiness ×6', desc:'أكواب بطبقات الكريمة والكيك والفواكه الطازجة — سعادة صغيرة في كل كوب، جاهزة للأخذ.', price:100, unit:'6 أكواب', img:'img/r-cups.webp', badge:'من بروفايل الشيف 📸'},
  {id:23, cat:'mod', name:'فريزيي الفراولة', fr:'Fraisier', desc:'كريمة موسلين خفيفة وفراولة طازجة — يُنهى بيد الشيف في المشغل، في نفس اليوم.', price:220, unit:'كعكة 8 أشخاص', img:'img/p-fraisier.webp', badge:'توقيع الشيف ✍️'},
 ];
 const CATNAMES = {mar:'حلويات مغربية', mod:'حلويات عصرية', vien:'فيينوازري', event:'مناسبات', box:'علب هدايا', sale:'مملحات · Traiteur'};
@@ -990,7 +993,7 @@ function renderSale(){
 }
 renderSale();
 
-const VITRINE_IDS = [45, 42, 34, 30, 43, 31];
+const VITRINE_IDS = [45, 48, 41, 40, 44, 49, 50];
 function renderVitrine(){
   const grid = document.getElementById('gridVitrine');
   if (!grid) return;
