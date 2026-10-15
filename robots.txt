@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chef-patisserie-tanger.onrender.com/sitemap.xml
