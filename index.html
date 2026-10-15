@@ -281,7 +281,7 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
     <a href="#home">الرئيسية</a>
     <a href="#best">الأكثر طلباً</a>
     <a href="#catalogue">الكتالوج</a>
-    <a href="#catalogue" data-goto-filter="sale">المملحات</a>
+    
     <a href="#weddings">الأعراس</a>
     <a href="#contact">تواصل</a>
   </nav>
@@ -294,7 +294,7 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
     <div>
       <p class="kicker">✦ شيف باتيسري طنجة — باتيسري سيهام ✦</p>
       <h1>حلويات وكعكات <span class="gold">مصممة على ذوقك</span> في طنجة</h1>
-      <p class="lead">تشيزكيك، كيك ديزاين، كعكات أعراس، حلويات مغربية ومملحات، محضّرة على الطلب وموصلة داخل طنجة.</p>
+      <p class="lead">تشيزكيك، كيك ديزاين، كعكات أعراس، حلويات مغربية، محضّرة على الطلب وموصلة داخل طنجة.</p>
       <div class="hero-cta">
         <a class="btn btn-gold" href="#catalogue">🍰 شوف الكتالوج</a>
         <a class="btn btn-wa" href="https://wa.me/212647381609?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A8%D8%BA%D9%8A%D8%AA%20%D9%86%D8%B7%D9%84%D8%A8" target="_blank" rel="noopener">💬 اطلب عبر واتساب</a>
@@ -340,7 +340,6 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
       <button class="occ-tile" data-occ-filter="event"><span class="ic">🎂</span><b>عيد ميلاد</b><small>كعكات المناسبات</small></button>
       <button class="occ-tile" data-occ-filter="custom"><span class="ic">🧒</span><b>حفلة أطفال</b><small>تصاميم وثيمات</small></button>
       <a class="occ-tile" href="#weddings" style="text-decoration:none"><span class="ic">👰</span><b>عرس</b><small>كعكات وبوفيهات</small></a>
-      <button class="occ-tile" data-occ-filter="sale"><span class="ic">🍢</span><b>بوفيه</b><small>مملحات للضيافة</small></button>
       <button class="occ-tile" data-occ-filter="mar"><span class="ic">🍵</span><b>جلسة أتاي</b><small>حلويات مغربية</small></button>
       <button class="occ-tile" data-occ-filter="under150"><span class="ic">💰</span><b>أقل من 150 درهم</b><small>خيارات في المتناول</small></button>
       <a class="occ-tile" href="#custom" style="text-decoration:none"><span class="ic">🎨</span><b>كيك مخصص</b><small>صورة، اسم أو ثيمة</small></a>
@@ -362,7 +361,6 @@ body.rv-on [data-rv].in{opacity:1;transform:none}
         <button class="tab" data-cat="mod" role="tab">🍰 عصرية</button>
         <button class="tab" data-cat="event" role="tab">🎂 مناسبات</button>
         <button class="tab" data-cat="party" role="tab">🎉 حفلات</button>
-        <button class="tab" data-cat="sale" role="tab">🧆 مملحات</button>
         <button class="tab" data-cat="under150" role="tab">💰 أقل من 150 درهم</button>
         <button class="tab" data-cat="custom" role="tab">🎨 كيك مخصص</button>
       </div>
@@ -544,15 +542,6 @@ const PRODUCTS = [
 ];
 const CATNAMES = {mar:'حلويات مغربية', mod:'حلويات عصرية', vien:'فيينوازري', event:'مناسبات', box:'علب هدايا', sale:'مملحات · Traiteur'};
 const SALE_PRODUCTS = [
-  {"id":104,"cat":"sale","name":"بريوات مملحة مشكّلة ×12","fr":"Briouates salées ×12","desc":"كفتة، دجاج وجبن — مثلثات ذهبية مقرمشة تخرج سخونة من الفرن.","price":100,"unit":"12 قطعة","img":"img/s-briouate.webp"},
-  {"id":106,"cat":"sale","name":"ميني كيش مشكّل ×12","fr":"Mini quiches ×12","desc":"دجاج، طون وخضرة في قوالب صغيرة ذهبية — بوفيهك جاهز.","price":110,"unit":"12 قطعة","img":"img/s-miniquiche.webp"},
-  {"id":108,"cat":"sale","name":"ميني بيتزا مشكّلة ×12","fr":"Mini pizzas ×12","desc":"صلصة طماطم، جبن ذائب وزيتون — صغيرة في الحجم، كبيرة في الذوق.","price":120,"unit":"12 قطعة","img":"img/s-pizza.webp"},
-  {"id":107,"cat":"sale","name":"كيش عائلي كبير","fr":"Quiche familiale","desc":"كيش كامل للعائلة: دجاج وفطر أو طون أو خضرة — اختر الحشوة.","price":140,"unit":"كيش كبير","img":"img/s-quiche.webp"},
-  {"id":105,"cat":"sale","name":"سيكار بالجبن ×12","fr":"Cigares au fromage ×12","desc":"لفائف رقيقة محشوة بالجبن والأعشاب — رفيق الشوربات والسلطات.","price":90,"unit":"12 قطعة","img":"img/s-cigare.webp"},
-  {"id":112,"cat":"sale","name":"صينية مملحات للمناسبات","fr":"Plateau salé événementiel","desc":"صينية كاملة مشكّلة على قياس مناسبتك — الحجز قبل 72 ساعة.","price":400,"unit":"صينية — ابتداءً من","img":"img/render-sale-vitrine.webp","badge":"للمناسبات 🎉"},
-  {"id":109,"cat":"sale","name":"شوصون بالطون والجبن","fr":"Chausson thon & fromage","desc":"عجينة مورّقة ذهبية وحشوة طون وجبن — سخون وكيذوب.","price":14,"unit":"قطعة","img":"img/s-chausson.webp"},
-  {"id":110,"cat":"sale","name":"فول أو فان بالدجاج والفطر","fr":"Vol-au-vent poulet-champignons","desc":"قوقعة مورّقة وكريمة دجاج وفطر — لمسة فرنسية راقية.","price":14,"unit":"قطعة","img":"img/s-volauvent.webp"},
-  {"id":111,"cat":"sale","name":"بوتي فور مملح مشكّل","fr":"Petits fours salés","desc":"تشكيلة مملحات راقية بالكيلو — للضيافة اليومية والمناسبات.","price":180,"unit":"كيلوغرام","img":"img/render-sale-assort.webp"}
 ];
 const ALL = PRODUCTS.concat(SALE_PRODUCTS);
 const byId = id => ALL.find(x => x.id === id);
@@ -568,7 +557,6 @@ const GROUPS = [
   { title: 'حلويات عصرية',     ids: [32, 23, 12, 13, 51, 11, 8, 9, 10] },
   { title: 'حلويات مغربية',    ids: [3, 6] },
   { title: 'الحفلات والعلب',   ids: [41, 49, 50] },
-  { title: 'المملحات',         ids: [104, 106, 108, 107, 105, 112, 109, 110, 111] }
 ];
 const FILTERS = {
   all:     () => ALL,
@@ -577,13 +565,13 @@ const FILTERS = {
   mod:     () => ALL.filter(p => p.cat === 'mod'),
   event:   () => ALL.filter(p => p.cat === 'event'),
   party:   () => PARTY_IDS.map(byId).filter(Boolean),
-  sale:    () => ALL.filter(p => p.cat === 'sale'),
   under150:() => ALL.filter(p => p.price < 150),
   custom:  () => CUSTOM_IDS.map(byId).filter(Boolean)
 };
 
 let cart = {};
 try { cart = JSON.parse(localStorage.getItem('chef_cart') || '{}'); } catch(e){ cart = {}; }
+Object.keys(cart).forEach(k => { if (!ALL.some(p => p.id == k)) delete cart[k]; });
 let curCat = 'all', curQ = '';
 
 function dh(n){ return n.toLocaleString('fr-FR').replace(/ /g,' ') + ' درهم'; }
